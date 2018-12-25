@@ -10,6 +10,9 @@ let sourceBuffer;
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
+const playButton = document.querySelector('button#play');
+
+//Function to start recording video on button click
 recordButton.addEventListener('click', () => {
   if (recordButton.textContent === 'Start Recording') {
     startRecording();
@@ -21,7 +24,7 @@ recordButton.addEventListener('click', () => {
   }
 });
 
-const playButton = document.querySelector('button#play');
+//Function to playback recorded video on button click
 playButton.addEventListener('click', () => {
   const superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
   recordedVideo.src = null;
@@ -43,6 +46,7 @@ function handleDataAvailable(event) {
   }
 }
 
+//Onclick of Record button calls this fn
 function startRecording() {
   recordedBlobs = [];
   let options = {mimeType: 'video/webm;codecs=vp9'};
@@ -92,17 +96,18 @@ function handleSuccess(stream) {
   console.log('getUserMedia() got stream:', stream);
   window.stream = stream;
 
-  const gumVideo = document.querySelector('video#gum');
-  gumVideo.srcObject = stream;
+  const liveVideo = document.querySelector('video#live');
+  liveVideo.srcObject = stream;
 }
 
+//Get permission to access camera
 async function init(constraints) {
   try {
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     handleSuccess(stream);
   } catch (e) {
     console.error('navigator.getUserMedia error:', e);
-    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+    errorMsgElement.innerHTML = `Camera/permission not available`;
   }
 }
 
