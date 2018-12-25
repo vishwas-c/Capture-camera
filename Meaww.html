@@ -7,24 +7,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Aleo:400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="meaww.js" async></script>
     </head>
     <body>
-        <h1>Record Audio and Video</h1>
+        <h1>Record Video and Instant Playback</h1>
+        <div >
+            <span class="errortext" id="errorMsg"></span>
+        </div>
         <div class="video-player">
-            <video id="gum" playsinline autoplay muted></video>
+            <video id="live" playsinline autoplay muted></video>
             <video id="recorded" playsinline loop></video>
         </div>
         <div class="buttons">
             <button id="start">Start camera</button>
             <button id="record" disabled>Start Recording</button>
-            <button id="play" disabled>Play</button>
+            <button id="play" disabled>View Recording</button>
         </div>
-        <div>
-            <span id="errorMsg"></span>
-        </div>
-
+        
         <!-- 3. Include the WebRTC library and the latest adapter -->
         <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-        <script src="meaww.js" async></script>
+        
     </body>
 </html>

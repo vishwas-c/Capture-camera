@@ -1,0 +1,28 @@
+body {
+    font-family: 'Aleo', serif;
+}
+.video-player {
+    display: block;
+    margin: 5rem auto 2rem auto;
+}
+video {
+    max-width: 30rem;
+    max-height: 30rem;
+}
+h1,
+.video-player,
+.buttons {
+    text-align: center;
+}
+h1 {
+    font-weight: 700;
+}
+button {
+    padding: 0.5rem 1rem;
+    min-width: 5.5rem;
+    background-color: rgb(120, 221, 123);
+}
+.errortext {
+    font-size: 1rem;
+}
+  
