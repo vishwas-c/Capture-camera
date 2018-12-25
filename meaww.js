@@ -46,7 +46,7 @@ function handleDataAvailable(event) {
   }
 }
 
-//Onclick of Record button calls this fn
+//Onclick  of Record button calls this fn
 function startRecording() {
   recordedBlobs = [];
   let options = {mimeType: 'video/webm;codecs=vp9'};
@@ -110,7 +110,7 @@ async function init(constraints) {
     errorMsgElement.innerHTML = `Camera/permission not available`;
   }
 }
-
+//Start Button Click
 document.querySelector('button#start').addEventListener('click', async () => {
   
   const constraints = {
