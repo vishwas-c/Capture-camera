@@ -21,6 +21,8 @@ button {
     padding: 0.5rem 1rem;
     min-width: 5.5rem;
     background-color: rgb(120, 221, 123);
+    font-size: 1rem;
+    
 }
 .errortext {
     font-size: 1rem;
